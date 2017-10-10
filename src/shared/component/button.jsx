@@ -4,10 +4,16 @@ import React from 'react'
 
 type Props = {
   label: string,
+  message: string,
   handleClick: Function,
 }
 
-const Button = ({ label, handleClick }: Props) =>
-  <button onClick={handleClick}>{label}</button>
+/* eslint-disable */
+const Button = ({ label, message, handleClick }: Props) =>
+  <div>
+    <span>{message}</span>
+    <button onClick={handleClick}>{label}</button>
+  </div>
+/* eslint-enable */
 
 export default Button

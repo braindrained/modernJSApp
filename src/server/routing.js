@@ -42,7 +42,7 @@ export default (app: Object) => {
   app.post('/ajax/addmonth', (req, res) => {
     // eslint-disable-next-line no-console
     console.log(req.body)
-    res.json(req.body)
+    res.json({ serverMessage: 'done' })
   })
 
   app.get('/500', () => {

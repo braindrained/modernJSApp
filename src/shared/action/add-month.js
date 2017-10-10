@@ -15,7 +15,7 @@ export const addMnothFailure = createAction(ADD_MONTH_FAILURE)
 
 // eslint-disable-next-line
 export const addMonth = (object: ?Object) => (dispatch: Function) => {
-
+  dispatch(addMonthRequest())
   return fetch('/ajax/addmonth', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -23,14 +23,17 @@ export const addMonth = (object: ?Object) => (dispatch: Function) => {
     body: JSON.stringify(object),
   })
     .then((res) => {
+      console.log('1', res)
       if (!res.ok) throw Error(res.statusText)
       return res.json()
     })
     .then((data) => {
+      console.log('2', data)
       if (!data.serverMessage) throw Error('No message received')
       dispatch(addMnothSuccess(data.serverMessage))
     })
-    .catch(() => {
+    .catch((e) => {
+      console.log(e)
       dispatch(addMnothFailure())
     })
 }

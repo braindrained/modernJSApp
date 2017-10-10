@@ -15,6 +15,7 @@ const initialState = Immutable.fromJS({
 })
 
 const addMonthReducer = (state: Immut = initialState, action: { type: string, payload: any }) => {
+  console.log('addMonthReducer', action.type)
   switch (action.type) {
     case ADD_MONTH_REQUEST:
       return state.set('messageAsync', 'Loading...')
