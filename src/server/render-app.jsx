@@ -32,6 +32,7 @@ const renderApp = (location: string, plainPartialState: ?Object, routerContext: 
     <html>
       <head>
         ${head.title}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         ${head.meta}
         <link rel="stylesheet" href="${STATIC_PATH}/css/style.css">
         <style class="${JSS_SSR_CLASS}">${sheets.toString()}</style>

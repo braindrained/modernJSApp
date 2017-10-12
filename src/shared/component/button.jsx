@@ -12,6 +12,7 @@ type Props = {
 const Button = ({ label, message, handleClick }: Props) =>
   <div>
     <span>{message}</span>
+    <br/>
     <button onClick={handleClick}>{label}</button>
   </div>
 /* eslint-enable */

@@ -9,7 +9,7 @@ const title = 'Add Month Page'
 
 /* eslint-disable */
 const AddMonthPage = () =>
-  <div>
+  <div className="container">
     <Helmet
       title={title}
       meta={[

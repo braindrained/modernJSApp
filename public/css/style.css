@@ -1,9 +1,84 @@
+html {
+   margin: 0px;
+   height: 100%;
+}
+
 body {
-  width: 960px;
-  margin: auto;
+  margin: 0;
   font-family: sans-serif;
+  height: 100%;
 }
 
 h1 {
-  color: limegreen;
+  color: gray;
+}
+
+nav {
+  height: 40px;
+  width: 100%;
+  position: relative;
+}
+
+nav li {
+  float: left;
+  list-style: none;
+  margin-left: 20px;
+  line-height: 40px;
+  background: #fff;
+}
+
+nav ul {
+  margin: 0;
+  padding-left: 0;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0.25s, opacity 0.25s linear; /* Safari */
+  transition: visibility 0.25s, opacity 0.25s linear;
+}
+
+nav img {
+  max-height: 32px;
+  float: left;
+  display: none;
+}
+
+nav button {
+  display: none;
+  background-color: transparent;
+  border: none;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+      width: 100%;
+      max-width: 100%;
+  }
+
+  .container {
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  nav {
+    top: 0;
+    position: fixed;
+  }
+
+  nav ul {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  nav li {
+    float: none;
+  }
+
+  nav img {
+    display: block;
+    padding: 4px;
+  }
+
+  nav button {
+    display: block;
+  }
 }

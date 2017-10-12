@@ -25,7 +25,7 @@ const styles = {
 
 /* eslint-disable */
 const HomePage = ({ classes }: { classes: Object }) =>
-  <div>
+  <div className="container">
     <Helmet
       meta={[
         { name: 'description', content: 'Hello App is an app to say hello' },

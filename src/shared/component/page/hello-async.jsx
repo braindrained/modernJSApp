@@ -10,7 +10,7 @@ const title = 'Async Hello Page'
 
 /* eslint-disable */
 const HelloAsyncPage = () =>
-  <div>
+  <div className="container">
     <Helmet
       title={title}
       meta={[

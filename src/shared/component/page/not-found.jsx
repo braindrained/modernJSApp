@@ -7,7 +7,7 @@ const title = 'Page Not Found'
 
 /* eslint-disable */
 const NotFoundPage = () =>
-  <div>
+  <div className="container">
     <Helmet
       title={title}
       meta={[

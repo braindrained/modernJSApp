@@ -10,7 +10,7 @@ const title = 'Hello Page'
 
 /* eslint-disable */
 const HelloPage = () =>
-  <div>
+  <div className="container">
     <Helmet
       title={title}
       meta={[
