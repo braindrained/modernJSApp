@@ -1,3 +1,5 @@
+[![Build Status](https://img.shields.io/travis/braindrained/modernJSApp.svg?style=flat-square)](https://travis-ci.org/braindrained/modernJSApp)
+
 # modernJSApp
 
 Following this guide:
