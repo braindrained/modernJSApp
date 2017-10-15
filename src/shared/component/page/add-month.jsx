@@ -4,6 +4,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import AddMonthButton from '../../container/add-month-button'
+import GetActivities from '../../container/get-activities'
 
 const title = 'Add Month Page'
 
@@ -18,6 +19,9 @@ const AddMonthPage = () =>
       ]}
     />
     <h1>{title}</h1>
+
+    <GetActivities />
+
     <AddMonthButton />
   </div>
 /* eslint-enable */

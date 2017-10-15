@@ -36,6 +36,12 @@ const renderApp = (location: string, plainPartialState: ?Object, routerContext: 
         ${head.meta}
         <link rel="stylesheet" href="${STATIC_PATH}/css/style.css">
         <style class="${JSS_SSR_CLASS}">${sheets.toString()}</style>
+        <script>
+          localStorage.setItem('window', JSON.stringify({
+            width: window.innerWidth,
+            height: window.innerHeight,
+          }))
+        </script>
       </head>
       <body>
         <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>

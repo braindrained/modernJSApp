@@ -16,14 +16,11 @@ const initStore = (plainPartialState: ?Object) => {
       .merge(Immutable.fromJS(plainPartialState.hello))
   }
 
-  if (plainPartialState && plainPartialState.addmonth) {
-    // flow-disable-next-line
-    preloadedState.addmonth = addMonthReducer(undefined, {})
-      .merge(Immutable.fromJS(plainPartialState.addmonth))
-  }
-
   return createStore(
-    combineReducers({ hello: helloReducer, addmonth: addMonthReducer }),
+    combineReducers({
+      hello: helloReducer,
+      addmonth: addMonthReducer,
+    }),
     preloadedState, applyMiddleware(thunkMiddleware),
   )
 }

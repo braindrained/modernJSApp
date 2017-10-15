@@ -3,15 +3,15 @@
 import { connect } from 'react-redux'
 
 import { addMonth } from '../action/add-month'
-import Button from '../component/button'
+import AddMonth from '../component/add-month'
 
-const mapStateToProps = state => ({
+const mapStateToProps = () => ({
   label: 'New month',
-  message: state.addmonth.get('messageAsync'),
+  message: '',
 })
 
 const mapDispatchToProps = dispatch => ({
   handleClick: () => { dispatch(addMonth({ month: '', text: '' })) },
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Button)
+export default connect(mapStateToProps, mapDispatchToProps)(AddMonth)

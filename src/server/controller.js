@@ -11,7 +11,7 @@ export const helloAsyncPage = () => ({
 })
 
 export const addMonthPage = () => ({
-  addmonth: { messageAsync: 'Server-side preloaded message for async page' },
+  addmonth: { messageAsync: 'Add new month' },
 })
 
 export const helloEndpoint = (num: number) => ({

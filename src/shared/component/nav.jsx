@@ -10,21 +10,33 @@ import {
   ADD_MONTH_PAGE_ROUTE,
 } from '../routes'
 
+/* eslint-disable no-unused-vars */
 class Nav extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      visible: true,
+      visible: false,
+      clientWidth: null,
+      clientHeight: null,
     }
   }
 
   componentDidMount() {
-    this.setState({ visible: document.documentElement.clientWidth < 800 ? false : true })
+    const windowObject = JSON.parse(localStorage.getItem('window'))
+
+    // eslint-disable-next-line react/no-did-mount-set-state
+    this.setState({
+      visible: windowObject.width > 800,
+      clientWidth: windowObject.width,
+      clientHeight: windowObject.height,
+    })
   }
 
   handleClick() {
-    this.setState({ visible: !this.state.visible })
+    if (this.state.clientWidth && this.state.clientWidth < 800) {
+      this.setState({ visible: this.state ? !this.state.visible : true })
+    }
   }
 
   render() {
@@ -33,7 +45,15 @@ class Nav extends React.Component {
         <button onClick={this.handleClick.bind(this)}>
           <img src="/static/img/hamburger.svg" alt="hamb" />
         </button>
-        <ul style={this.state.visible ? { visibility: 'visible', opacity: 1 } : { visibility: 'hidden', opacity: 0 }}>
+        <ul style={this.state && this.state.visible ?
+          {
+            minWidth: this.state.clientWidth < 800 ? this.state.clientWidth - 52 : 'auto',
+            left: 0,
+            minHeight: this.state.clientHeight,
+          } : {
+            left: this.state.clientWidth < 800 ? `-${this.state.clientWidth - 52}px` : 0,
+          }
+        }>
           {[
             { route: HOME_PAGE_ROUTE, label: 'Home' },
             { route: HELLO_PAGE_ROUTE, label: 'Say Hello' },
@@ -50,5 +70,6 @@ class Nav extends React.Component {
     )
   }
 }
+/* eslint-enable */
 
-export default (Nav)
+export default Nav

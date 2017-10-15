@@ -7,3 +7,5 @@ export const NOT_FOUND_DEMO_PAGE_ROUTE = '/404'
 export const ADD_MONTH_PAGE_ROUTE = '/add-month'
 
 export const helloEndpointRoute = (num: ?number) => `/ajax/hello/${num || ':num'}`
+
+export const getActivitiesRoute = (num: ?number) => `/ajax/getactivities/${num || ':num'}`

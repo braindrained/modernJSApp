@@ -14,6 +14,7 @@ import {
   HELLO_ASYNC_PAGE_ROUTE,
   ADD_MONTH_PAGE_ROUTE,
   helloEndpointRoute,
+  getActivitiesRoute,
 } from '../shared/routes'
 
 import renderApp from './render-app'
@@ -32,11 +33,26 @@ export default (app: Object) => {
   })
 
   app.get(ADD_MONTH_PAGE_ROUTE, (req, res) => {
+    // eslint-disable-next-line
+    console.log(req.headers['user-agent'])
     res.send(renderApp(req.url, addMonthPage()))
   })
 
   app.get(helloEndpointRoute(), (req, res) => {
     res.json(helloEndpoint(req.params.num))
+  })
+
+  app.get(getActivitiesRoute(), (req, res) => {
+    /* eslint-disable */
+    console.log('routing.js', req.body)
+
+    const responseData = [
+      { id: 1, projectId: 1, activityDesc: 'desc', hour: 10 },
+      { id: 2, projectId: 3, activityDesc: 'desc', hour: 8 }
+    ]
+    /* eslint-enable */
+
+    res.json({ serverMessage: 'done activities', data: responseData })
   })
 
   app.post('/ajax/addmonth', (req, res) => {
