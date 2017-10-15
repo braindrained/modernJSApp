@@ -10,7 +10,7 @@ import {
   ADD_MONTH_PAGE_ROUTE,
 } from '../routes'
 
-/* eslint-disable no-unused-vars */
+/* eslint-disable */
 class Nav extends React.Component {
   constructor(props) {
     super(props)
@@ -30,12 +30,16 @@ class Nav extends React.Component {
       visible: windowObject.width > 800,
       clientWidth: windowObject.width,
       clientHeight: windowObject.height,
+      opacity: windowObject.width > 800 ? 1 : this.state.opacity,
     })
   }
 
   handleClick() {
     if (this.state.clientWidth && this.state.clientWidth < 800) {
-      this.setState({ visible: this.state ? !this.state.visible : true })
+      this.setState({
+        visible: this.state ? !this.state.visible : true,
+        opacity: 1,
+      })
     }
   }
 
@@ -50,8 +54,10 @@ class Nav extends React.Component {
             minWidth: this.state.clientWidth < 800 ? this.state.clientWidth - 52 : 'auto',
             left: 0,
             minHeight: this.state.clientHeight,
+            opacity: this.state.opacity,
           } : {
             left: this.state.clientWidth < 800 ? `-${this.state.clientWidth - 52}px` : 0,
+            opacity: this.state.opacity,
           }
         }>
           {[

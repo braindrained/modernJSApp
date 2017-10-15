@@ -13,7 +13,7 @@ class ItemMap extends React.Component<ItemMapProps> {
   }
 
   componentDidMount() {
-    console.log('ItemMap mount', JSON.parse(localStorage.getItem('clientWindow')))
+    console.log('ItemMap mount', JSON.parse(localStorage.getItem('window')))
   }
 
   render() {

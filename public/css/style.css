@@ -68,6 +68,7 @@ nav button {
   nav ul {
     position: absolute;
     background: #fff;
+    opacity: 0;
   }
 
   nav li {
