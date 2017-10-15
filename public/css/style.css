@@ -32,8 +32,8 @@ nav ul {
   padding-left: 0;
   visibility: visible;
   opacity: 1;
-  -webkit-transition: left 0.25s, opacity 0.25s linear; /* Safari */
-  transition: left 0.25s, opacity 0.25s linear;
+  -webkit-transition: left 0.25s linear; /* Safari */
+  transition: left 0.25s linear;
 }
 
 nav img {

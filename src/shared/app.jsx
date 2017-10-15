@@ -22,7 +22,7 @@ import {
 const App = () => (
   <div>
     <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
-    <Nav />
+    <Nav {...{}} />
     <Switch>
       <Route exact path={HOME_PAGE_ROUTE} render={() => <HomePage />} />
       <Route path={HELLO_PAGE_ROUTE} render={() => <HelloPage />} />

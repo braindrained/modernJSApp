@@ -10,28 +10,41 @@ import {
   ADD_MONTH_PAGE_ROUTE,
 } from '../routes'
 
+type State = {
+  visible: boolean,
+  clientWidth: number,
+  clientHeight: number,
+  opacity: ?number
+}
+
+type Props = {}
+
 /* eslint-disable */
-class Nav extends React.Component {
-  constructor(props) {
+class Nav extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props)
 
+    // flow-disable-next-line
     this.state = {
-      visible: false,
-      clientWidth: null,
-      clientHeight: null,
+      visible: true,
+      clientWidth: 0,
+      clientHeight: 0,
     }
   }
 
   componentDidMount() {
-    const windowObject = JSON.parse(localStorage.getItem('window'))
+    if (localStorage && localStorage.getItem('window')) {
+      // flow-disable-next-line
+      const windowObject = JSON.parse(localStorage.getItem('window'))
 
-    // eslint-disable-next-line react/no-did-mount-set-state
-    this.setState({
-      visible: windowObject.width > 800,
-      clientWidth: windowObject.width,
-      clientHeight: windowObject.height,
-      opacity: windowObject.width > 800 ? 1 : this.state.opacity,
-    })
+      // flow-disable-next-line
+      this.setState({
+        visible: windowObject.width > 800,
+        clientWidth: windowObject.width,
+        clientHeight: windowObject.height,
+        opacity: windowObject.width > 800 ? 1 : this.state.opacity,
+      })
+    }
   }
 
   handleClick() {
@@ -50,6 +63,7 @@ class Nav extends React.Component {
           <img src="/static/img/hamburger.svg" alt="hamb" />
         </button>
         <ul style={this.state && this.state.visible ?
+          // flow-disable-next-line
           {
             minWidth: this.state.clientWidth < 800 ? this.state.clientWidth - 52 : 'auto',
             left: 0,

@@ -12,10 +12,6 @@ class ItemMap extends React.Component<ItemMapProps> {
     super(props)
   }
 
-  componentDidMount() {
-    console.log('ItemMap mount', JSON.parse(localStorage.getItem('window')))
-  }
-
   render() {
 
     return (
