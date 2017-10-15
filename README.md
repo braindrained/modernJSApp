@@ -1,4 +1,6 @@
 [![Build Status](https://img.shields.io/travis/braindrained/modernJSApp.svg?style=flat-square)](https://travis-ci.org/braindrained/modernJSApp)
+[![Dependencies](https://img.shields.io/david/braindrained/modernJSApp.svg?style=flat-square)](https://david-dm.org/braindrained/modernJSApp)
+[![Dev Dependencies](https://img.shields.io/david/dev/braindrained/modernJSApp.svg?style=flat-square)](https://david-dm.org/braindrained/modernJSApp?type=dev)
 
 # modernJSApp
 
