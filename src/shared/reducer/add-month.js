@@ -39,7 +39,7 @@ const addMonthReducer = (state: Immut = initialState, action: { type: string, pa
     case GET_ACTIVITIES_FAILURE: {
       return Object.assign({}, state, {
         isFetching: false,
-        errorMessage: action.payload.message,
+        errorMessage: action.payload,
       })
     }
     default:

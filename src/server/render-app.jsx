@@ -41,6 +41,30 @@ const renderApp = (location: string, plainPartialState: ?Object, routerContext: 
             width: window.innerWidth,
             height: window.innerHeight,
           }))
+          localStorage.setItem('navigator', JSON.stringify({
+            appCodeName: navigator.appCodeName,
+            appName: navigator.appName,
+            appVersion: navigator.appVersion,
+            cookieEnabled: navigator.cookieEnabled,
+            geolocation: navigator.geolocation,
+            language: navigator.language,
+            onLine: navigator.onLine,
+            platform: navigator.platform,
+            product: navigator.product,
+            userAgent: navigator.userAgent
+          }))
+          console.log({
+            appCodeName: navigator.appCodeName,
+            appName: navigator.appName,
+            appVersion: navigator.appVersion,
+            cookieEnabled: navigator.cookieEnabled,
+            geolocation: navigator.geolocation,
+            language: navigator.language,
+            onLine: navigator.onLine,
+            platform: navigator.platform,
+            product: navigator.product,
+            userAgent: navigator.userAgent
+          })
         </script>
       </head>
       <body>

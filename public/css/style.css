@@ -9,8 +9,25 @@ body {
   height: 100%;
 }
 
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    opacity:  .5;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   opacity:  .5;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   opacity:  .5;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   opacity:  .5;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   opacity:  .5;
+}
+
 h1 {
   color: gray;
+  text-align: center;
 }
 
 nav {
@@ -47,6 +64,18 @@ nav button {
   background-color: transparent;
   border: none;
   float: right;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.activities button {
+  background-color: #4285f4;
+  border: none;
+  padding: 10px;
+  color: #fff;
 }
 
 @media only screen and (max-width: 800px) {

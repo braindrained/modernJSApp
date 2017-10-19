@@ -47,8 +47,8 @@ export default (app: Object) => {
     console.log('routing.js', req.body)
 
     const responseData = [
-      { id: 1, projectId: 1, activityDesc: 'desc', hour: 10 },
-      { id: 2, projectId: 3, activityDesc: 'desc', hour: 8 }
+      { id: 1, projectId: 1, activityDesc: 'desc', hours: 10 },
+      { id: 2, projectId: 3, activityDesc: 'desc', hours: 8 }
     ]
     /* eslint-enable */
 

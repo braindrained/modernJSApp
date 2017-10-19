@@ -67,7 +67,7 @@ class Nav extends React.Component<Props, State> {
           {
             minWidth: this.state.clientWidth < 800 ? this.state.clientWidth - 52 : 'auto',
             left: 0,
-            minHeight: this.state.clientHeight,
+            minHeight: this.state.clientWidth < 800 ? this.state.clientHeight : 'auto',
             opacity: this.state.opacity,
           } : {
             left: this.state.clientWidth < 800 ? `-${this.state.clientWidth - 52}px` : 0,
