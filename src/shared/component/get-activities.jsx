@@ -6,7 +6,7 @@ type Props = {
   label: string,
   state: ?Object,
   handleClick: Function,
-  classes: ?Object
+  classes: Object
 }
 
 /* eslint-disable */
