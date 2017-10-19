@@ -4,7 +4,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import injectSheet from 'react-jss'
 
-import AddMonthButton from '../../container/add-month-button'
+// import AddMonthButton from '../../container/add-month-button'
 import GetActivities from '../../container/get-activities'
 
 const title = 'Add Month Page'
