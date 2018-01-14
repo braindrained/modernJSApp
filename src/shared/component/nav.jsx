@@ -2,12 +2,14 @@
 
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import injectSheet from 'react-jss'
 import {
   HOME_PAGE_ROUTE,
   HELLO_PAGE_ROUTE,
   HELLO_ASYNC_PAGE_ROUTE,
   NOT_FOUND_DEMO_PAGE_ROUTE,
   ADD_MONTH_PAGE_ROUTE,
+  NEW_PAGE_ROUTE,
 } from '../routes'
 
 type State = {
@@ -17,7 +19,9 @@ type State = {
   opacity: ?number
 }
 
-type Props = {}
+type Props = {
+  classes: Object,
+}
 
 /* eslint-disable */
 class Nav extends React.Component<Props, State> {
@@ -57,6 +61,7 @@ class Nav extends React.Component<Props, State> {
   }
 
   render() {
+    console.log(this.props)
     return (
       <nav>
         <button onClick={this.handleClick.bind(this)}>
@@ -65,7 +70,7 @@ class Nav extends React.Component<Props, State> {
         <ul style={this.state && this.state.visible ?
           // flow-disable-next-line
           {
-            minWidth: this.state.clientWidth < 800 ? this.state.clientWidth - 52 : 'auto',
+            minWidth: this.state.clientWidth < 800 ? this.state.clientWidth - 52 : '100%',
             left: 0,
             minHeight: this.state.clientWidth < 800 ? this.state.clientHeight : 'auto',
             opacity: this.state.opacity,
@@ -80,8 +85,9 @@ class Nav extends React.Component<Props, State> {
             { route: HELLO_ASYNC_PAGE_ROUTE, label: 'Say Hello Asynchronously' },
             { route: NOT_FOUND_DEMO_PAGE_ROUTE, label: '404 Demo' },
             { route: ADD_MONTH_PAGE_ROUTE, label: 'Add month' },
+            { route: NEW_PAGE_ROUTE, label: 'new' },
           ].map(link => (
-            <li key={link.route}>
+            <li key={link.route} className={`${this.props.classes.navLi}`}>
               <NavLink onClick={this.handleClick.bind(this)} to={link.route} activeStyle={{ color: 'blue' }} exact>{link.label}</NavLink>
             </li>
           ))}
@@ -92,4 +98,10 @@ class Nav extends React.Component<Props, State> {
 }
 /* eslint-enable */
 
-export default Nav
+const styles = {
+  navLi: {
+    
+  }
+}
+
+export default injectSheet(styles)(Nav)

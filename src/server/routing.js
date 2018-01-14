@@ -6,6 +6,7 @@ import {
   helloAsyncPage,
   addMonthPage,
   helloEndpoint,
+  New
 } from './controller'
 
 import {

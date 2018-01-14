@@ -12,11 +12,13 @@ import HelloPage from './component/page/hello'
 import HelloAsyncPage from './component/page/hello-async'
 import NotFoundPage from './component/page/not-found'
 import AddMonthPage from './component/page/add-month'
+import New from './component/page/new'
 import {
   HOME_PAGE_ROUTE,
   HELLO_PAGE_ROUTE,
   HELLO_ASYNC_PAGE_ROUTE,
   ADD_MONTH_PAGE_ROUTE,
+  NEW_PAGE_ROUTE,
 } from './routes'
 
 const App = () => (
@@ -28,6 +30,7 @@ const App = () => (
       <Route path={HELLO_PAGE_ROUTE} render={() => <HelloPage />} />
       <Route path={HELLO_ASYNC_PAGE_ROUTE} render={() => <HelloAsyncPage />} />
       <Route path={ADD_MONTH_PAGE_ROUTE} render={() => <AddMonthPage />} />
+      <Route path={NEW_PAGE_ROUTE} render={() => <New />} />
       <Route component={NotFoundPage} />
     </Switch>
   </div>

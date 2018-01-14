@@ -52,7 +52,7 @@ export const getActivities = (num: number) => (dispatch: Function) => {
       return res.json()
     })
     .then((data) => {
-      // console.log('action',data)
+      console.log('action',data)
       if (!data.serverMessage) throw Error('No data received')
       dispatch(getActivitiesSuccess({ message: data.serverMessage, data: data.data }))
     })

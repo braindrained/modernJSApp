@@ -48,7 +48,7 @@ const AddMonthPage = ({ classes }: { classes: Object }) =>
       <div style={{ width: 150, float: 'left' }}>Project list</div>
       <div style={{ width: 600, float: 'right' }}>Activity</div>
       <div style={{ width: 150, float: 'left', height: 200, border: '1px solid gray' }}>
-        <select multiple="true" style={{ width: 150, height: 200 }}>
+        <select multiple={true} style={{ width: 150, height: 200 }}>
         {
           [
             { projectId: 1, projectName: 'Project 1' },

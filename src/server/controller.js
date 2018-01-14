@@ -14,6 +14,10 @@ export const addMonthPage = () => ({
   addmonth: { messageAsync: 'Add new month' },
 })
 
+export const New = () => ({
+  mew: { messageAsync: 'new' },
+})
+
 export const helloEndpoint = (num: number) => ({
   serverMessage: `Hello from the server! (received ${num})`,
 })
