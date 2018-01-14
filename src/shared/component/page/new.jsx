@@ -1,8 +1,7 @@
 // @flow
 
-import React, {Component,PropTypes} from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Helmet from 'react-helmet'
 import injectSheet from 'react-jss'
 import { getActivities } from '../../action/add-month'
 
@@ -36,7 +35,6 @@ type Props = {
 }
 
 class New extends Component<Props, State> {
-
   constructor(props: Props) {
     super(props)
 
@@ -44,28 +42,25 @@ class New extends Component<Props, State> {
     this.state = {}
   }
 
-    componentDidMount () {
-        this.props.handleDispatch()
-    }
+  componentDidMount() {
+    this.props.handleDispatch()
+  }
 
-    render(){
-
-        return(
-            <div>
-                {
-                this.props.state && this.props.state.data ? this.props.state.data.map((item) => {
-                    return (
-                    <div key={`activities_${item.id}`} className={this.props.classes.rowItem}>
-                        <div className={`${this.props.classes.rowItemCell} ${this.props.classes.firstCell}`}>{item.projectId}</div>
-                        <div className={`${this.props.classes.rowItemCell} ${this.props.classes.secondCell}`}>{item.activityDesc}</div>
-                        <div className={`${this.props.classes.rowItemCell} ${this.props.classes.thirdCell}`}>{item.hours}</div>
-                    </div>
-                    )
-                }) : null
+  render() {
+    return (
+      <div>
+        {
+                this.props.state && this.props.state.data ? this.props.state.data.map(item => (
+                  <div key={`activities_${item.id}`} className={this.props.classes.rowItem}>
+                    <div className={`${this.props.classes.rowItemCell} ${this.props.classes.firstCell}`}>{item.projectId}</div>
+                    <div className={`${this.props.classes.rowItemCell} ${this.props.classes.secondCell}`}>{item.activityDesc}</div>
+                    <div className={`${this.props.classes.rowItemCell} ${this.props.classes.thirdCell}`}>{item.hours}</div>
+                  </div>
+                    )) : null
                 }
-            </div>
-        )
-    }
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => ({
@@ -77,4 +72,4 @@ const mapDispatchToProps = dispatch => ({
   handleDispatch: () => { dispatch(getActivities(1)) },
 })
 
-export default injectSheet(styles)(connect(mapStateToProps, mapDispatchToProps)(New));
+export default injectSheet(styles)(connect(mapStateToProps, mapDispatchToProps)(New))

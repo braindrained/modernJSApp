@@ -6,7 +6,7 @@ import {
   helloAsyncPage,
   addMonthPage,
   helloEndpoint,
-  New
+  New,
 } from './controller'
 
 import {
@@ -14,6 +14,7 @@ import {
   HELLO_PAGE_ROUTE,
   HELLO_ASYNC_PAGE_ROUTE,
   ADD_MONTH_PAGE_ROUTE,
+  NEW_PAGE_ROUTE,
   helloEndpointRoute,
   getActivitiesRoute,
 } from '../shared/routes'
@@ -37,6 +38,12 @@ export default (app: Object) => {
     // eslint-disable-next-line
     console.log(req.headers['user-agent'])
     res.send(renderApp(req.url, addMonthPage()))
+  })
+
+  app.get(NEW_PAGE_ROUTE, (req, res) => {
+    // eslint-disable-next-line
+    console.log(req.headers['user-agent'])
+    res.send(renderApp(req.url, New()))
   })
 
   app.get(helloEndpointRoute(), (req, res) => {

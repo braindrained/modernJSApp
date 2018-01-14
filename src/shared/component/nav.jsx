@@ -99,9 +99,7 @@ class Nav extends React.Component<Props, State> {
 /* eslint-enable */
 
 const styles = {
-  navLi: {
-    
-  }
+  navLi: { },
 }
 
 export default injectSheet(styles)(Nav)

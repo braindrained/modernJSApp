@@ -4,7 +4,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { getActivities } from '../action/add-month'
-//import GetActivities from '../component/get-activities'
 
 type Props = {
   label: string,
