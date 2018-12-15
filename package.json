@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/braindrained/modernJSApp.git",
-  "author": "paolosenese <paolo.senese@casa.it>",
+  "author": "paolosenese <p.senese@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "npm-run-all -p dev:start dev:wds",
@@ -67,6 +67,7 @@
     "redux-actions": "^2.2.1",
     "redux-thunk": "^2.2.0",
     "socket.io": "^2.0.3",
-    "socket.io-client": "^2.0.3"
+    "socket.io-client": "^2.0.3",
+    "superagent": "^4.0.0"
   }
 }

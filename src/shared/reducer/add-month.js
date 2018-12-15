@@ -12,17 +12,21 @@ import {
   GET_ACTIVITIES_FAILURE,
 } from '../action/add-month'
 
-const initialState = Immutable.fromJS({})
+const initialState = Immutable.fromJS({
+  message: 'Initial reducer message',
+  messageAsync: 'Initial reducer message for async call',
+})
 
 const addMonthReducer = (state: Immut = initialState, action: { type: string, payload: any }) => {
+  console.log(state);
   switch (action.type) {
     case ADD_MONTH_REQUEST:
       return Object.assign({}, state)
     case ADD_MONTH_SUCCESS:
-      return Object.assign({}, state, action.payload, {
+      return state.set('messageAsync', Object.assign({}, state, action.payload, {
         isFetching: false,
         errorMessage: '',
-      })
+      }))
     case ADD_MONTH_FAILURE:
       return Object.assign({}, state, {
         isFetching: false,

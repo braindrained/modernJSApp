@@ -27,7 +27,14 @@ export default (app: Object) => {
   })
 
   app.get(HELLO_PAGE_ROUTE, (req, res) => {
-    res.send(renderApp(req.url, helloPage()))
+    //res.send(renderApp(req.url, helloPage()))
+
+    helloPage()
+      .then(
+        plainPartialState => res.send(renderApp(req.url, plainPartialState)),
+        // eslint-disable-next-line no-console
+        err => console.error(err),
+      )
   })
 
   app.get(HELLO_ASYNC_PAGE_ROUTE, (req, res) => {
@@ -37,7 +44,13 @@ export default (app: Object) => {
   app.get(ADD_MONTH_PAGE_ROUTE, (req, res) => {
     // eslint-disable-next-line
     console.log(req.headers['user-agent'])
-    res.send(renderApp(req.url, addMonthPage()))
+
+    const responseData = [
+      { id: 1, projectId: 1, activityDesc: 'desc', hours: 10 },
+      { id: 2, projectId: 3, activityDesc: 'desc', hours: 8 }
+    ]
+
+    res.send(renderApp(req.url, addMonthPage(responseData)))
   })
 
   app.get(NEW_PAGE_ROUTE, (req, res) => {

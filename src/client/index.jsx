@@ -28,7 +28,7 @@ const store = createStore(combineReducers(
   { hello: helloReducer, addmonth: addMonthReducer }),
 {
   hello: Immutable.fromJS(preloadedState.hello),
-  addmonth: Immutable.fromJS(preloadedState.addmonth),
+  addmonth: preloadedState.addmonth,
 },
 composeEnhancers(applyMiddleware(thunkMiddleware)),
 )
